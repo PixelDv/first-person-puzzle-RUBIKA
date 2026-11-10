@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 8285170546901351313}
   - component: {fileID: 1561774215509724737}
   - component: {fileID: 5101303832043860123}
-  - component: {fileID: 8703790670777422013}
   - component: {fileID: 912684273249480381}
   m_Layer: 0
   m_Name: '[CORE]'
@@ -177,37 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa95b5f8c0770049b5905c83a80f3ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoSceneSaveState
---- !u!114 &8703790670777422013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781389189474833376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 657954267ff82f045998e87366c2c117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DynamicInputActivator
-  actionName: 
-  actionReference: {fileID: -4902317674710309727, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
-  targetObject: {fileID: 4918906683870586696}
-  mode: 1
-  onActionTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 633559444938526582}
-        m_TargetAssemblyTypeName: Shine, Assembly-CSharp
-        m_MethodName: ToggleShineOn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &912684273249480381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,16 +188,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657954267ff82f045998e87366c2c117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicInputActivator
-  actionName: 
-  actionReference: {fileID: -4902317674710309727, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  actionName: Player/Shine
+  actionReference: {fileID: 3201274001778925544, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
   targetObject: {fileID: 4918906683870586696}
-  mode: 2
+  mode: 1
   onActionTriggered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 633559444938526582}
         m_TargetAssemblyTypeName: Shine, Assembly-CSharp
-        m_MethodName: ToggleShineOff
+        m_MethodName: ToggleShine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -764,6 +732,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7304466496328119944}
     m_Modifications:
+    - target: {fileID: 2468668049774650845, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: on
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4779166072389604011, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: crosshairImage
       value: 

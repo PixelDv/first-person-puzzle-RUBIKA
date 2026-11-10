@@ -2,25 +2,55 @@ using UnityEngine;
 
 public class ShineObject : MonoBehaviour
 {
-    //VARIABLES
     public bool Catched = false;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+
+    private Camera cam;
+
     void Start()
     {
-        
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+        cam = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Catched)
+        // If caught, check if we are still looking at it (inside camera viewport)
+        if (Catched && cam != null)
         {
-            GetComponent<Renderer>().enabled = true;
+            Vector3 viewportPos = cam.WorldToViewportPoint(transform.position);
+            bool isInFrontOfCamera = viewportPos.z > 0;
+            bool isOnScreen = viewportPos.x >= 0 && viewportPos.x <= 1 && viewportPos.y >= 0 && viewportPos.y <= 1;
+
+            // If it goes off-screen or behind the camera, release it
+            if (!isInFrontOfCamera || !isOnScreen)
+            {
+                ReleaseObject();
+            }
         }
-        else
+
+        Renderer rend = GetComponent<Renderer>();
+        if (rend != null)
         {
-            GetComponent<Renderer>().enabled = false;
+            rend.enabled = Catched;
         }
+    }
+
+    public void CatchObject()
+    {
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+
+        Catched = true;
+    }
+
+    public void ReleaseObject()
+    {
+        Catched = false;
+
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
     }
 }

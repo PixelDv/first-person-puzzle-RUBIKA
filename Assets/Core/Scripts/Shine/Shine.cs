@@ -3,32 +3,34 @@ using UnityEngine;
 
 public class Shine : MonoBehaviour
 {
-    // VARIABLES
     public bool on = true; 
     private List<ShineObject> ShineObjects = new List<ShineObject>();
 
-    void Update()
+    private void Update()
     {
-        Debug.Log(on);
+        //UnityEngine.Debug.Log(on);
     }
-    
-    private void OnTriggerEnter(Collider col)
+
+    private void OnTriggerEnter(Collider col) //Stores every Shine Objects that enters the Hitbox
     {
         if (col.CompareTag("Shine"))
         {
             if (col.TryGetComponent<ShineObject>(out ShineObject script))
             {
+                if (!ShineObjects.Contains(script))
+                {
+                    ShineObjects.Add(script);
+                }
+
                 if (on)
                 {
-                    script.Catched = true;
+                    script.CatchObject();
                 }
-                
-                ShineObjects.Add(script);
             }
         }
     }
 
-    private void OnTriggerExit(Collider col)
+    private void OnTriggerExit(Collider col) //Remove seens objects
     {
         if (col.CompareTag("Shine"))
         {
@@ -39,28 +41,31 @@ public class Shine : MonoBehaviour
         }
     }
 
-    public void TriggerCheck()
-    {
-        foreach (ShineObject script in ShineObjects)
-        {
-            if (script == null) continue;
-                
-            script.Catched = false;
-        }
-    }
-
-    public void ToggleShineOn()
-    {
-        on = true;
-    }
-    
-    public void ToggleShineOff()
+    public void ToggleShine() //Toggle Shine
     {
         if (on)
         {
-            TriggerCheck();
+            // Turn off: release/hide all objects and reset their positions
+            foreach (ShineObject script in ShineObjects)
+            {
+                if (script != null)
+                {
+                    script.ReleaseObject();
+                }
+            }
+            on = false;
         }
-        on = false;
+        else
+        {
+            on = true;
+            // Turn back on: catch/show all objects currently sitting inside the hitbox
+            foreach (ShineObject script in ShineObjects)
+            {
+                if (script != null)
+                {
+                    script.CatchObject();
+                }
+            }
+        }
     }
-    
 }
