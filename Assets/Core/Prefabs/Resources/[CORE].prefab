@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1561774215509724737}
   - component: {fileID: 5101303832043860123}
   - component: {fileID: 912684273249480381}
+  - component: {fileID: 2916434557166994170}
   m_Layer: 0
   m_Name: '[CORE]'
   m_TagString: Untagged
@@ -207,6 +208,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2916434557166994170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781389189474833376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bb1769c6acf3043b72ce6e41a52929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StressManager
+  score_update_timer: 1
+  stressTiers: []
 --- !u!1 &5665026444331141509
 GameObject:
   m_ObjectHideFlags: 0

@@ -895,8 +895,8 @@
     "m_ObjectId": "173ba0904d4b421f90cb5ea12a2a4419",
     "m_Title": "emission",
     "m_Position": {
-        "x": -963.999755859375,
-        "y": 312.79998779296877
+        "x": -963.0001220703125,
+        "y": 315.0
     }
 }
 
@@ -1006,8 +1006,8 @@
     "m_ObjectId": "2c1ab267869e447da47b07342ff9e6d2",
     "m_Title": "smoothness",
     "m_Position": {
-        "x": -1511.2000732421875,
-        "y": 739.9998779296875
+        "x": -1511.0001220703125,
+        "y": 742.0001220703125
     }
 }
 
@@ -2498,8 +2498,8 @@
     "m_ObjectId": "88b22120fbbd471ea79b87ecafac48fb",
     "m_Title": "color",
     "m_Position": {
-        "x": -882.3998413085938,
-        "y": -174.40000915527345
+        "x": -882.0001220703125,
+        "y": -173.00003051757813
     }
 }
 
@@ -2610,7 +2610,7 @@
     "useTexelSize": true,
     "isHDR": false,
     "m_Modifiable": true,
-    "m_DefaultType": 0
+    "m_DefaultType": 1
 }
 
 {
