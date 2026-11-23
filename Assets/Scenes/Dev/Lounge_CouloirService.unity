@@ -2227,6 +2227,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 79c7348793ab57e4fb4b014cc0e08cf9, type: 3}
   m_PrefabInstance: {fileID: 648630828}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &652733405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652733408}
+  - component: {fileID: 652733407}
+  - component: {fileID: 652733406}
+  m_Layer: 0
+  m_Name: TriggerOpenAscenseur
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &652733406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652733405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa9d511ffb6e484cb4358b8e66b905c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::porteOuverture
+  myDoor: {fileID: 1790861964}
+  openTrigger: 1
+--- !u!65 &652733407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652733405}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 13.644054}
+  m_Center: {x: 0, y: 0, z: -1.960352}
+--- !u!4 &652733408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652733405}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27, y: 0, z: -42.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &670917054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 43e397c600997e9449a7ed6d28a7bbaf, type: 3}
@@ -6044,7 +6112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6473980514454932078, guid: 7139ad098b2686a43a3a73dac2f536bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.83
+      value: 3.72
       objectReference: {fileID: 0}
     - target: {fileID: -6473980514454932078, guid: 7139ad098b2686a43a3a73dac2f536bb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6052,7 +6120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6473980514454932078, guid: 7139ad098b2686a43a3a73dac2f536bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.2
+      value: 18.26
       objectReference: {fileID: 0}
     - target: {fileID: -2665083806616478060, guid: 7139ad098b2686a43a3a73dac2f536bb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8352,3 +8420,4 @@ SceneRoots:
   - {fileID: 57029839}
   - {fileID: 1005979765}
   - {fileID: 797249035}
+  - {fileID: 652733408}
