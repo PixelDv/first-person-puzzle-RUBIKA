@@ -9,7 +9,7 @@ public class PersistentCoreManager : MonoBehaviour
 
     [Header("Références Joueur & Caméra")]
     [SerializeField] private GameObject playerGameObject;
-    [SerializeField] private Camera mainCamera;
+    [SerializeField] public Camera mainCamera;
     [SerializeField] private FirstPersonController playerController;
     [SerializeField] private PlayerInteractor playerInteractor;
 
