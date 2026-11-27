@@ -2,55 +2,91 @@ using UnityEngine;
 
 public class ShineObject : MonoBehaviour
 {
-    public bool Catched = false;
-    private Vector3 initialPosition;
-    private Quaternion initialRotation;
+    // ==========================================
+    // SETTINGS
+    // ==========================================
+    [Header("⚙️ Settings")]
+    public bool persistant = false;
+    [Range(0f, 1f)]
+    public float needed_percentage = 0.8f;
+    public GameObject auraParticles;
 
-    private Camera cam;
+    // ==========================================
+    // VARIABLES
+    // ==========================================
+    [HideInInspector] public bool catched = false;
+    private MeshRenderer meshRenderer;
+    //particles
+    [HideInInspector] public ParticleSystem ps_main;
+    [HideInInspector] public ParticleSystem ps_core;
+    [HideInInspector] public ParticleSystem ps_glow;
+    [HideInInspector] public ParticleSystem ps_sparks; 
 
-    void Start()
+    // ==========================================
+    // MAIN LOGIC
+    // ==========================================
+    private void Start()
     {
-        initialPosition = transform.position;
-        initialRotation = transform.rotation;
-        cam = Camera.main;
+        meshRenderer = GetComponent<MeshRenderer>();
+
+        if(auraParticles != null)
+        {
+            GameObject spawnedAura = Instantiate(auraParticles, transform);
+            spawnedAura.transform.localPosition = Vector3.zero;
+
+            ps_main = spawnedAura.GetComponent<ParticleSystem>();
+            ps_core = ps_main.transform.Find("core")?.GetComponentInChildren<ParticleSystem>();
+            ps_glow = ps_main.transform.Find("glow")?.GetComponentInChildren<ParticleSystem>();
+            ps_sparks = ps_main.transform.Find("sparks")?.GetComponentInChildren<ParticleSystem>();
+
+        }
     }
 
-    void Update()
+    //update
+    private void Update()
     {
-        // If caught, check if we are still looking at it (inside camera viewport)
-        if (Catched && cam != null)
+        if(catched)
         {
-            Vector3 viewportPos = cam.WorldToViewportPoint(transform.position);
-            bool isInFrontOfCamera = viewportPos.z > 0;
-            bool isOnScreen = viewportPos.x >= 0 && viewportPos.x <= 1 && viewportPos.y >= 0 && viewportPos.y <= 1;
+            meshRenderer.enabled = true;
+        }
+        else
+        {
+            meshRenderer.enabled = false;
+        }
+    }
 
-            // If it goes off-screen or behind the camera, release it
-            if (!isInFrontOfCamera || !isOnScreen)
-            {
-                ReleaseObject();
-            }
+    // ==========================================
+    // FUNCTIONS
+    // ==========================================
+
+    public void auraEffect(float percentage = 0f)
+    {
+        if (!ps_main.isPlaying)
+        {
+            ps_main.Play();
+            ps_core.Play();
+            ps_glow.Play();
+            ps_sparks.Play();
         }
 
-        Renderer rend = GetComponent<Renderer>();
-        if (rend != null)
-        {
-            rend.enabled = Catched;
-        }
+        float normalized_percent = Mathf.InverseLerp(0.2f, 1.0f, percentage);
+
+        ps_main.customData.SetVector(ParticleSystemCustomData.Custom1, 0, normalized_percent);
+        ps_glow.customData.SetVector(ParticleSystemCustomData.Custom1, 0, normalized_percent);
+        ps_core.startSize = normalized_percent;
     }
 
-    public void CatchObject()
-    {
-        initialPosition = transform.position;
-        initialRotation = transform.rotation;
+    // ==========================================
+    // DEBUG
+    // ==========================================
 
-        Catched = true;
+    private void OnGUI()
+    {
+        //GUI.Label(new Rect(10, 120, 200, 30), $"Catched: {catched}");
     }
 
-    public void ReleaseObject()
+    public void onCatch()
     {
-        Catched = false;
-
-        transform.position = initialPosition;
-        transform.rotation = initialRotation;
+        Debug.Log("Catched !!!");
     }
 }

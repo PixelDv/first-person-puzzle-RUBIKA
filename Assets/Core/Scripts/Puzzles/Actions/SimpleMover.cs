@@ -47,7 +47,7 @@ public class SimpleMover : MonoBehaviour, ISaveable, IInteractable
 
     private Vector3 startPosition;
     private Quaternion startRotation;
-    private bool isOpen = false;
+    public bool isOpen = false;
     private int currentStep = 0;
     private bool isInitialized = false;
     private Coroutine moveCoroutine;
