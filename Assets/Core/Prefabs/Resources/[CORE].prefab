@@ -753,6 +753,10 @@ PrefabInstance:
       propertyPath: playerCameraTransform
       value: 
       objectReference: {fileID: 3188449885105195007}
+    - target: {fileID: 4779166072389604011, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: objectGrabPointTransform
+      value: 
+      objectReference: {fileID: 2275985367115820645}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -952,6 +956,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26293d724f06e3948bd2ef5ba9fc364c, type: 3}
+--- !u!4 &2275985367115820645 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5715827262807447160, guid: 26293d724f06e3948bd2ef5ba9fc364c, type: 3}
+  m_PrefabInstance: {fileID: 5820724661193635869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &3188449885105195000 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 9005220659476430821, guid: 26293d724f06e3948bd2ef5ba9fc364c, type: 3}
