@@ -2703,6 +2703,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2183571527213586614, guid: 6130a8832fe7c07458d7bb13c8bf4a7b, type: 3}
+      propertyPath: onDrop.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183571527213586614, guid: 6130a8832fe7c07458d7bb13c8bf4a7b, type: 3}
+      propertyPath: onDrop.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183571527213586614, guid: 6130a8832fe7c07458d7bb13c8bf4a7b, type: 3}
+      propertyPath: onDrop.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2041855058}
+    - target: {fileID: 2183571527213586614, guid: 6130a8832fe7c07458d7bb13c8bf4a7b, type: 3}
+      propertyPath: onDrop.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183571527213586614, guid: 6130a8832fe7c07458d7bb13c8bf4a7b, type: 3}
+      propertyPath: onDrop.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183571527213586614, guid: 6130a8832fe7c07458d7bb13c8bf4a7b, type: 3}
+      propertyPath: onDrop.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SimpleMover, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183571527213586614, guid: 6130a8832fe7c07458d7bb13c8bf4a7b, type: 3}
+      propertyPath: onDrop.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2857974568294102862, guid: 6130a8832fe7c07458d7bb13c8bf4a7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.0274844
