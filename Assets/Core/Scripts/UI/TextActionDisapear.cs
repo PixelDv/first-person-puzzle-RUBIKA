@@ -5,22 +5,27 @@ using System.Collections;
 public class TextActionDisapear : MonoBehaviour
 {
     [SerializeField] private float duration = 10f;
-    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private GameObject text;
+    [SerializeField] private bool isSpawningAtStart;
 
     private void Start() 
     {
-        StartCoroutine(WaitForDisapear());
+        text = gameObject;  
+      if (isSpawningAtStart)
+        {
+            StartCoroutine(WaitForDisapear());
+        }
     }
 
-    public void ShowText()
+    public void ShowText(bool isShowing)
     {
-        StartCoroutine(WaitForDisapear());
+        text.SetActive(isShowing);
     }
 
     private IEnumerator WaitForDisapear()
     {
-        text.enabled = true;
+        text.SetActive(true);
         yield return new WaitForSeconds(duration);
-        text.enabled = false;
+        text.SetActive(false);
     }
 }
